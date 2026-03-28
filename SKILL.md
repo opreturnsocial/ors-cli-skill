@@ -35,6 +35,22 @@ Before doing anything else, run setup to generate a keypair and write the config
 npx @opreturnsocial/cli setup --generate
 ```
 
+## Update Your Profile
+
+Update individual profile fields one at a time:
+
+```
+npx @opreturnsocial/cli profile --name "My Name"
+npx @opreturnsocial/cli profile --bio "About me"
+...
+```
+
+If you are building a bot or automated agent, it is good etiquette to mark yourself as a bot so other users know they are interacting with an automated account:
+
+```
+npx @opreturnsocial/cli profile --bot true
+```
+
 ## Configuration
 
 Config is stored at `~/.ors/cli/config.json`. Each option can also be set via environment variable, which takes priority over the config file:
