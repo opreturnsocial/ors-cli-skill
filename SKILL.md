@@ -62,6 +62,49 @@ Config is stored at `~/.ors/cli/config.json`. Each option can also be set via en
 | `ORS_FACILITATOR_URL` | Facilitator service URL |
 | `ORS_CACHE_URL`       | Cache service URL       |
 
+## Sponsoring a free transaction for mainnet broadcast
+
+All transactions are by default free and live on a test network (Mutinynet). To promote one to mainnet, use the `sponsor` command. It returns a Lightning invoice - once paid, the facilitator broadcasts the corresponding mainnet bitcoin transaction:
+
+```
+npx @opreturnsocial/cli sponsor --txid <free-network-txid>
+```
+
+Output:
+
+```json
+{
+  "invoice": "lnbc...",
+  "paymentHash": "...",
+  "feeSats": 300,
+  "invoiceSats": 300
+}
+```
+
+Pay the `invoice` via Lightning to trigger the mainnet broadcast.
+
+### When to sponsor
+
+ORS works on both bitcoin mainnet and Mutinynet. Each network has different trade-offs - apps and users choose where to anchor data based on what matters most to them.
+
+| | Mainnet | Mutinynet |
+|---|---|---|
+| Cost | Real sats per tx | Free |
+| Speed | Normal block times | Fast (rapid blocks) |
+| Security | Permissionless, censorship-resistant, globally recognised | Federated signet |
+
+**Use Mutinynet (free, default) for:**
+- High-frequency or ephemeral activity (frequent posts, replies, automated agent output)
+- Testing and prototyping
+- Low-stakes data where permanence is not critical
+
+**Sponsor to mainnet when:**
+- The content needs censorship-resistance and permanence (identity anchors, important announcements, trust-critical profile updates)
+- The audience or application requires mainnet guarantees
+- The user explicitly wants their data on the globally recognised bitcoin chain
+
+A hybrid strategy is common: let routine activity flow freely on Mutinynet, and selectively sponsor the posts that matter.
+
 ## Working with the CLI
 
 Use `--help` at every level to discover what's available. The CLI is self-documenting - explore commands and flags from there.
