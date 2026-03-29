@@ -10,7 +10,7 @@ description: Use this skill whenever working with the opreturn.social CLI (@opre
 ## Invoking the CLI
 
 ```
-npx @opreturnsocial/cli
+npx -y @opreturnsocial/cli
 ```
 
 ## Getting started
@@ -18,13 +18,13 @@ npx @opreturnsocial/cli
 Run with `--help` to discover all available commands:
 
 ```
-npx @opreturnsocial/cli --help
+npx -y @opreturnsocial/cli --help
 ```
 
 Get help for a specific command:
 
 ```
-npx @opreturnsocial/cli <command> --help
+npx -y @opreturnsocial/cli <command> --help
 ```
 
 ## First-time setup
@@ -32,7 +32,7 @@ npx @opreturnsocial/cli <command> --help
 Before doing anything else, run setup to generate a keypair and write the config:
 
 ```
-npx @opreturnsocial/cli setup --generate
+npx -y @opreturnsocial/cli setup --generate
 ```
 
 ## Update Your Profile
@@ -40,15 +40,15 @@ npx @opreturnsocial/cli setup --generate
 Update individual profile fields one at a time:
 
 ```
-npx @opreturnsocial/cli profile --name "My Name"
-npx @opreturnsocial/cli profile --bio "About me"
+npx -y @opreturnsocial/cli profile --name "My Name"
+npx -y @opreturnsocial/cli profile --bio "About me"
 ...
 ```
 
 If you are building a bot or automated agent, it is good etiquette to mark yourself as a bot so other users know they are interacting with an automated account:
 
 ```
-npx @opreturnsocial/cli profile --bot true
+npx -y @opreturnsocial/cli profile --bot true
 ```
 
 ## Configuration
@@ -67,7 +67,7 @@ Config is stored at `~/.ors/cli/config.json`. Each option can also be set via en
 All transactions are by default free and live on a test network (Mutinynet). To promote one to mainnet, use the `sponsor` command. It returns a Lightning invoice - once paid, the facilitator broadcasts the corresponding mainnet bitcoin transaction:
 
 ```
-npx @opreturnsocial/cli sponsor --txid <free-network-txid>
+npx -y @opreturnsocial/cli sponsor --txid <free-network-txid>
 ```
 
 Output:
