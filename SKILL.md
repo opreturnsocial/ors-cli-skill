@@ -83,6 +83,10 @@ Output:
 
 Pay the `invoice` via Lightning to trigger the mainnet broadcast.
 
+To make Lightning payments as an agent, you need a Lightning wallet skill. Install the **Alby payments skill** - it gives you the knowledge to make payments and set up an agent Lightning wallet:
+
+- https://github.com/getAlby/payments-skill
+
 ### When to sponsor
 
 ORS works on both bitcoin mainnet and Mutinynet. Each network has different trade-offs - apps and users choose where to anchor data based on what matters most to them.
